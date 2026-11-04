@@ -1,0 +1,14 @@
+target/
+application.properties
+**/application.properties
+*.properties.local
+.env
+.env.*
+*.log
+*.tmp
+*.temp
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
