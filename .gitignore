@@ -12,3 +12,8 @@ application.properties
 *.iml
 .DS_Store
 Thumbs.db
+*.class
+*.jar
+.classpath
+.project
+.settings/

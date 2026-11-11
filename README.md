@@ -6,11 +6,11 @@
 [![Maven](https://img.shields.io/badge/Maven-3.9%2B-blue?logo=apachemaven)](https://maven.apache.org/)
 [![MySQL](https://img.shields.io/badge/MySQL-8%2B-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com/)
 [![JUnit](https://img.shields.io/badge/JUnit-5-25A162?logo=junit5&logoColor=white)](https://junit.org/junit5/)
-[![Build](https://img.shields.io/badge/build-locally%20verified-brightgreen)](#verification)
+[![Local verification](https://img.shields.io/badge/Maven-local%20verification%20passed-brightgreen)](#verification)
 
 A desktop application for registering vehicles, allocating compatible parking slots, recording entry and exit, calculating fees, and keeping payment, history, and waiting-list data in MySQL. The project is a practical Java portfolio example of object-oriented design, Java collections, Swing, JDBC, DAO separation, and transactional writes.
 
-**Verified locally:** `mvn clean package` succeeds; the opt-in MySQL workflow and unit tests passed in the configured environment. There is no CI workflow or hosted build badge configured.
+Verified locally on 2026-11-11 with Java 21 and Maven 3.9.16, including the opt-in MySQL workflow. No hosted CI status is configured.
 
 ## Contents
 
@@ -36,22 +36,17 @@ The technically interesting part is the combination of in-memory Java collection
 
 ## Screenshots
 
-Authentic application screenshots are not included yet. The Swing window was not available to the desktop capture tool in this session, so no substitute images are presented as screenshots. Capture the following from the running application and save the PNG files under [`docs/screenshots/`](docs/screenshots/README.md):
+These are genuine screenshots of the running Swing application. The vehicle-search image uses fictional demo data. Five screens are currently captured. The existing waiting-list capture shows an empty queue and is retained as-is; a populated queue capture is still needed:
 
-| File | Screen to capture |
+| Screen | Screenshot |
 |---|---|
-| `dashboard.png` | Overview with database-backed metrics |
-| `vehicle-registration.png` | Vehicles tab with the registration form and vehicle table |
-| `vehicle-search.png` | Vehicles tab showing a search/filter result |
-| `parking-entry.png` | Entry & Exit tab before confirming an entry |
-| `parking-exit.png` | Entry & Exit tab with the exit controls |
-| `parking-slots.png` | Parking Slots tab with slot status |
-| `waiting-queue.png` | Waiting Queue tab with a queued demo vehicle |
-| `parking-history.png` | History tab with a completed visit |
-| `payments.png` | Payments tab with a recorded payment |
-| `receipt.png` | Completed receipt displayed in the entry/exit screen |
+| Dashboard | ![Dashboard](docs/screenshots/dashboard.png) |
+| Vehicle registration | ![Vehicle registration](docs/screenshots/vehicle-registration.png) |
+| Vehicle search | ![Vehicle search](docs/screenshots/vehicle-search.png) |
+| Parking slots | ![Parking slots](docs/screenshots/parking-slots.png) |
+| Waiting queue (empty state) | ![Waiting queue empty state](docs/screenshots/waiting-queue.png) |
 
-Use a local test database and clearly fictional vehicle details. Avoid capturing configuration files or credentials. See [`docs/screenshots/README.md`](docs/screenshots/README.md) for a manual capture checklist.
+The following screenshots still need manual capture: `parking-entry.png`, `parking-exit.png`, `receipt.png`, `parking-history.png`, `payments.png`, `waiting-queue-populated.png`, and `waiting-queue-promotion.png`. Follow the isolated-database checklist in [`docs/screenshots/README.md`](docs/screenshots/README.md). Keep `waiting-queue.png`; do not overwrite the existing empty-state capture.
 
 ## Features
 
@@ -171,7 +166,14 @@ The GUI calls service methods; it does not issue SQL. DAOs own SQL mapping, whil
 │   ├── DSA_IMPLEMENTATION.md
 │   ├── OOP_CONCEPTS.md
 │   ├── VIVA_QUESTIONS.md
-│   └── screenshots/README.md
+│   ├── TESTING.md
+│   └── screenshots/
+│       ├── README.md
+│       ├── dashboard.png
+│       ├── parking-slots.png
+│       ├── vehicle-registration.png
+│       ├── vehicle-search.png
+│       └── waiting-queue.png
 └── src/
     ├── main/
     │   ├── java/com/smartparking/
@@ -254,14 +256,7 @@ The quotes shown work in PowerShell and are also accepted by common shells. Chec
 
 ## Verification
 
-The project has been verified locally with Java 21 and the configured MySQL server:
-
-- `mvn clean compile` — passed.
-- `mvn clean test` — passed, 5 unit tests.
-- `mvn "-Dparking.integration=true" clean test` — passed, 1 MySQL workflow test plus 5 unit tests (6 total).
-- `mvn clean package` — passed.
-
-These are local run results; no hosted CI status is implied. The opt-in workflow verifies JDBC connection, database selection, registration/lookup, nearest-slot persistence, waiting-queue persistence and promotion, exit, fee, payment/history writes, rollback, concurrency protection, restart recovery, and fixture cleanup.
+See [`docs/TESTING.md`](docs/TESTING.md) for the verified commands and test coverage.
 
 ## Future enhancements
 
