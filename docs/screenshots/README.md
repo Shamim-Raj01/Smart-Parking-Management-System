@@ -33,6 +33,8 @@ Register fictional owners and vehicle registrations through the **Vehicles** tab
 
 ## Manual capture checklist
 
+On Windows, use **Win+Shift+S**, choose a window snip, and select the running Smart Parking window. Save each capture as a PNG in this directory using the filename in the checklist. Keep the application text readable and do not crop, retouch, or otherwise alter the captured image.
+
 1. **Vehicle entry — `parking-entry.png`:** In **Entry & Exit**, enter a registered vehicle's registration and click **Allocate nearest suitable slot**. Capture the confirmed ticket and slot status.
 2. **Vehicle exit — `parking-exit.png`:** In **Entry & Exit**, enter an active registration, choose Cash, UPI, or Card, and click **Calculate, pay and close ticket**. Capture the completed exit screen.
 3. **Receipt detail — `receipt.png`:** Open **Payments**, select the payment, click **View selected receipt**, and capture the receipt dialog.

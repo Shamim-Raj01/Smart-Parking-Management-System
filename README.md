@@ -271,9 +271,4 @@ The following are ideas, not current features:
 
 ## Author
 
-- **Name:** [Your Name]
-- **GitHub:** [Your GitHub profile]
-- **LinkedIn:** [Your LinkedIn profile]
-- **Contact:** [Your email address]
-
-Replace these placeholders with your own details before publishing.
+- **GitHub:** [Shamim-Raj01](https://github.com/Shamim-Raj01)

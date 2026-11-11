@@ -37,5 +37,3 @@ Verified locally on 2026-11-11 with Java 21, Maven 3.9.16, and the configured My
 | `mvn clean test` | Passed; 6 unit tests, 1 opt-in integration test skipped |
 | `mvn "-Dparking.integration=true" clean test` | Passed; 7 tests, 0 failures/errors/skips (6 unit + 1 MySQL workflow) |
 | `mvn clean package` | Passed; JAR created and unit-test suite passed (6 unit tests, 1 integration test skipped) |
-
-The first sandboxed test attempt could not resolve the compiled classes. Re-running Maven outside the sandbox succeeded, identifying the issue as sandbox access to generated build classes rather than project compiler/Surefire configuration. The integration suite initially had a global active-ticket count assertion; it was corrected to count only its `TEST-*` fixtures so unrelated database tickets do not cause a false failure.
